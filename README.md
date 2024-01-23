@@ -1,5 +1,5 @@
 # ConvNeXt 
-PyTorch implementation of the ["A ConvNet for the 2020s"](https://arxiv.org/pdf/2201.03545.pdf)
+PyTorch implementation of the paper ["A ConvNet for the 2020s"](https://arxiv.org/pdf/2201.03545.pdf)
 
 
 # Installation
@@ -20,18 +20,19 @@ pip3 install torch torchvision torchaudio --index-url https://download.pytorch.o
 
 Clone this repo and install required packages:
 ```
-git clone https://github.com/facebookresearch/ConvNeXt
+git clone https://github.com/EleonoraRistori/ConvNeXt_pytorch
 ```
+Required packages:
+
+1. OpenCV
+2. SciKitLearn
+3. ptflops from (https://github.com/sovrasov/flops-counter.pytorch)
 
 
 ## Mini-Imagenet Preparation
 
-Download Mini-Imagenet from https://drive.google.com/file/d/16V_ZlkW4SsnNDtnGmaBRq2OoPmUOc5mY/view, place the pickle files into ```data/miniImagenet``` folder,
+Download Mini-Imagenet from https://drive.google.com/file/d/16V_ZlkW4SsnNDtnGmaBRq2OoPmUOc5mY/view, place the pickle files into ```data/miniImagenet``` folder
 
-then extract files in the same folder
-```
-tar -xvzf data/miniImagenet/mini-imagenet.tar.gz -C data/miniImagenet
-```
 then run ```prepare_data.py```
 
 
@@ -40,9 +41,10 @@ For CIFAR-100 there is no need to download data, they will be automatically down
 
 
 # Usage
-Once you have downloaded the project and made sure you have all the requirements installed, you can train your own models simply 
-running ```training.py``` if you want to train the full size models (the original ones described in the paper) or the reduced ones 
-built specifically for the two datasets.
+Once you have downloaded the project and made sure you have all the requirements installed, you can train the models simply 
+running ```training.py``` if you want to train the full size models (the original ones described in the paper) or 
+```training-reduced.py``` for the reduced ones built specifically for the two datasets.
+```evaluate.py``` evaluates models on the test set and provides information about the computational complexity (FLOPS, #params)
 
 
 
